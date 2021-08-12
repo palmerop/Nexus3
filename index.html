@@ -60,11 +60,10 @@
                             map.setFeatureState({
                                 source: 'Nexus_fill',
                                 sourceLayer: 'wrl_polbnda_1m_ungis',
-                                id: row.Terr_ID,
+                                id: row.COUNTRY,
                             },
                              //Other rows to load
 			    {
-                                Country: row.COUNTRY,
                                 Nexus: row.NEXUS,
 				CName: row.CNAME,
 				Link: row.LINK
@@ -94,7 +93,7 @@
             map.addSource('Nexus_fill', {
                 type: 'vector',
                 url: 'mapbox://reliefweb.3xu48qmc',
-                promoteId: 'Terr_ID'
+                promoteId: 'Terr_Name'
             });
         
 	// When a click event occurs on a feature in the Nexus layer,
