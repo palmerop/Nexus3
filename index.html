@@ -101,9 +101,11 @@
 	// open a popup at the location of the click, with description
 	// HTML from the click event's properties.
 	map.on('click', 'Nexus_fill', (e) => {
+        const description = `
+        <p>County Name: ${e.features[0].properties.Terr_Name}</p>
 	new mapboxgl.Popup()
 	.setLngLat(e.lngLat)
-	.setHTML(e.features[0].properties.Terr_Name)
+	.setHTML(description)
 	.addTo(map);
 	});
 		
