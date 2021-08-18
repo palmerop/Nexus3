@@ -105,7 +105,7 @@
 	const pdfurl = e.features[0].properties.Link;
 	new mapboxgl.Popup()
 	.setLngLat(e.lngLat)
-	.setHTML(name)
+	.setHTML(name + pdfurl)
 	.addTo(map);
 	});
 		
