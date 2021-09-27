@@ -116,7 +116,7 @@
 	      const pdfurl = e.features[0].properties.Link;
 	      new mapboxgl.Popup()
 	       .setLngLat(e.lngLat)
-	       .setHTML(country + Link)
+	       .setHTML(country + pdfurl)
 	       .addTo(map);
 	      if (name) {
 		map.setFilter('Nexus_fill', ['==', ['get', 'Terr_Name'], name])
