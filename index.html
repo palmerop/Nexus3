@@ -95,6 +95,7 @@
 
             //Add source layer
             map.addSource('Nexus_fill', {
+		sourceLayer: "wrl_polbnda_1m_ungis",
                 type: 'vector',
                 url: 'mapbox://reliefweb.3xu48qmc',
                 promoteId: 'Terr_Name'
@@ -110,7 +111,7 @@
 	// open a popup at the location of the click, with description
 	// HTML from the click event's properties.
 	    map.on('click', 'Nexus_fill', (e) => {
-	      const country = features[0].state['CName'];
+	      const country = features[0].state['CName']
 	      //const pdfurl = e.features[0].properties.Link;
 	      //const Analysis = e.features[0].properties.Analysis;
 	      new mapboxgl.Popup()
