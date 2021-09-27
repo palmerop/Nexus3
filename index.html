@@ -114,6 +114,7 @@
 	    map.on('click', 'Nexus_fill', (e) => {
 	      const country = e.features[0].properties.Terr_Name;
 	      const pdfurl = e.features[0].properties.Link;
+	      const Analysis = e.features[0].properties.Analysis;
 	      new mapboxgl.Popup()
 	       .setLngLat(e.lngLat)
 	       .setHTML('<h4><strong><center>'+country+'</h4></strong></center>')
