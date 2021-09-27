@@ -112,11 +112,12 @@
 	// open a popup at the location of the click, with description
 	// HTML from the click event's properties.
 	    map.on('click', 'Nexus_fill', (e) => {
-	      const name = e.features[0].properties.Terr_Name;
-	      const pdfurl = e.features[0].properties.Link;
+              const country = features[0].state['CName']
+              const Link = features[0].state['Link']
+	      const Analysis = features[0].state['Analysis']
 	      new mapboxgl.Popup()
 	       .setLngLat(e.lngLat)
-	       .setHTML(name + pdfurl)
+	       .setHTML(country + Link)
 	       .addTo(map);
 	      if (name) {
 		map.setFilter('Nexus_fill', ['==', ['get', 'Terr_Name'], name])
