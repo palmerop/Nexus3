@@ -97,17 +97,26 @@
                 promoteId: 'Terr_Name'
             });
         
+	// This helps to reset the filter below
+	// You could accomplish this various different ways, but adding this to demonstrate.
+	   map.on('click', (e) => {
+	      map.setFilter('Nexus_fill', null);
+	   });
+
 	// When a click event occurs on a feature in the Nexus layer,
 	// open a popup at the location of the click, with description
 	// HTML from the click event's properties.
-	map.on('click', 'Nexus_fill', (e) => {
-        const name = e.features[0].properties.Terr_Name;
-	const pdfurl = e.features[0].properties.Link;
-	new mapboxgl.Popup()
-	.setLngLat(e.lngLat)
-	.setHTML(name + pdfurl)
-	.addTo(map);
-	});
+	    map.on('click', 'Nexus_fill', (e) => {
+	      const name = e.features[0].properties.Terr_Name;
+	      const pdfurl = e.features[0].properties.Link;
+	      new mapboxgl.Popup()
+	       .setLngLat(e.lngLat)
+	       .setHTML(name + pdfurl)
+	       .addTo(map);
+	      if (name) {
+		map.setFilter('Nexus_fill', ['==', ['get', 'Terr_Name'], name])
+	      }
+	 });
 		
 	// Change the cursor to a pointer when
 	// the mouse is over the states layer.
