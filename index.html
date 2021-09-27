@@ -114,6 +114,9 @@
 	      const country = e.features[0].state['CName'];
 	      const Link = e.features[0].state['Link'];
 	      const Analysis = e.features[0].state['Analysis'];
+	      const Outcomes = e.features[0].state['Outcomes'];
+	      const PnP =  e.features[0].state['PnP'];
+	      const Finance =  e.features[0].state['Finance'];
 	      new mapboxgl.Popup()
 	       .setLngLat(e.lngLat)
 	       .setHTML('<h4><strong><center>'+country+'</h4></strong></center>'+'Analysis: '+Analysis+'<br>Download the report <a href='+Link + '>here</a></p>')
