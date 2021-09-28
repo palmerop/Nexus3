@@ -102,9 +102,8 @@
             });
         
 	// This helps to reset the filter below
-	// You could accomplish this various different ways, but adding this to demonstrate.
 	   map.on('click', (e) => {
-	      map.setFilter('Nexus_fill', 'YES');
+	      map.setFilter('Nexus_fill', Null);
 	   });
 
 	// When a click event occurs on a feature in the Nexus layer,
@@ -122,7 +121,7 @@
 	       .setHTML('<h4><strong><center>'+country+'</h4></strong></center>'+'Analysis: '+Analysis+'<br>Download the report <a href='+Link + '>here</a></p>')
 	       .addTo(map);
 	      if (name) {
-		map.setFilter('Nexus_fill', ['==', ['get', 'Terr_Name'], name])
+		map.setFilter('Nexus_fill', ['==', ['get', 'CName'], name])
 	      }
 	 });
 		
