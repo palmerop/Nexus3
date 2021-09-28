@@ -121,7 +121,7 @@
 	       .setHTML('<h4><strong><center>'+country+'</h4></strong></center>'+'Analysis: '+Analysis+'<br>Download the report <a href='+Link + '>here</a></p>')
 	       .addTo(map);
 	      if (name) {
-		map.setFilter('Nexus_fill', ['==', ['get', 'CName'], name])
+		map.setFilter('Nexus_fill', ['==', ['get', 'CName'], country])
 	      }
 	 });
 		
